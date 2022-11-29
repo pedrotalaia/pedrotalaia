@@ -1,7 +1,6 @@
 
 let remainingDaysToLive = document.querySelector('h1');
 
-
 function lifeInWeeks(age) {
     var age = prompt("What's your age?");
     var ageLeft = (90-age);
