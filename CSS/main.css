@@ -15,5 +15,10 @@ body {
 
   .simoncanvas{
     background: black;
-    margin-top: 30px;
+    padding: 100px;
+  }
+
+  #green_btn, #red_btn, #blue_btn, #yellow_btn {
+    height: 100px;
+    width: 100px;
   }
