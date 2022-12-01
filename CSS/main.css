@@ -14,11 +14,15 @@ body {
   }
 
   .simoncanvas{
-    background: black;
     padding: 100px;
   }
 
   #green_btn, #red_btn, #blue_btn, #yellow_btn {
     height: 100px;
     width: 100px;
+    margin: 30px;
   }
+
+.changeColor {
+  background-color: white !important;
+}
