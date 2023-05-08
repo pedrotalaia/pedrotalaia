@@ -1,42 +1,74 @@
+// Var Declarations
 var colorArray = [];
+var simonSaysHeading = document.querySelector('h1');
+var colors = ['green_btn', 'blue_btn', 'red_btn', 'yellow_btn']
+var buttonClicked = document.querySelectorAll('.btn');
+var userPattern = [];
 
+// Click Listener
 document.addEventListener('click', (event) => {
-    return colorPicked(event.target.id);
-});
-var randomNumberGenerator = Math.floor(Math.random() * 4);
-
-function play() {
-    alert('Game Started!')
-    var colors = ['green', 'blue', 'red', 'yellow']
-    colorArray.push(colors[randomNumberGenerator]);
-    console.log(colorArray);
-
-    // ARRAY ITERATOR FOR THE FUTURE
-    // colorArray.forEach(el => {
-    //     el === 'green' ? console.log(el) : console.log('not green');
-    //     el === 'yellow' ? console.log(el) : console.log ('not yellow');
-    // });
-
-};
-
-function colorPicked(event) {
-    var buttonClicked = document.querySelectorAll('.btn');
-    
-    if (event === 'green_btn') {
-        try {
-            setTimeout(function changeStatus() {
-                buttonClicked[0].classList.add('changeColor');
-            }, 100)
-            setTimeout(function returnStatus() {
-                buttonClicked[0].classList.remove('changeColor');
-            }, 100)
-        } catch (msg) {
-            console.log(msg)
-        };
+    if (event.target.id === 'green_btn' || event.target.id === 'yellow_btn' || event.target.id === 'blue_btn' || event.target.id === 'red_btn'){
+        console.log(true)
+        colorPicked(event.target.id)
+        return nextSequence();
     }
     else {
-    console.log('other button ' + event)
+        return false
     }
+});
 
+// Functions Definition
+
+function randomNumber (){
+    var randomNumberGenerator = Math.floor(Math.random() * 4);
+    return randomNumberGenerator
 }
 
+function nextSequence(){
+return colorArray.push(colors[randomNumber()]);
+}
+
+
+function play() {
+    nextSequence();
+    if (colorArray.length > 1){
+    return simonSaysHeading.innerHTML = 'Restart Game';
+    }
+    else {
+    console.log(colorArray)
+    }
+};
+
+
+
+function colorPicked(event) {
+    userPattern.push(event);
+
+    if (userPattern !== colorArray){
+        console.log('true')
+    }
+    else {
+        console.log('false')
+    }
+}
+
+
+function restartGame(){
+    colorArray = [];
+    userPattern = [];
+    return simonSaysHeading.innerHTML = 'New Game Started';
+}
+
+
+//  Change Color Status
+//     if(color === colorArray[0]){
+//         setTimeout(function changeStatus() {
+//             colorArray[0].classList.add('changeColor');
+//         }, 500)
+//         setTimeout(function returnStatus() {
+//             colorArray[0].classList.remove('changeColor');
+//         }, 1000)
+//     }
+//     else {
+//         return null
+//     }

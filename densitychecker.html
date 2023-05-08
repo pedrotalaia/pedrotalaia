@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Own CSS-->
+    <link rel="stylesheet" href="CSS/main.css">
+    <title>SEO Keyword Density Checker</title>
+</head>
+<body>
+    <div class="container-fluid col-xs-12 col-md-8 text-center">
+        <h1>
+            SEO Keyword Density Checker
+        </h1>
+    </div>
+    <div class="container-fluid col-xs-12 col-md-8 text-center">
+        <form>
+            <div>
+                <label for="seo-text">Insert Text here:</label>
+            </div>
+            <div class="text-area-input">
+                <textarea name="seo-text" id="seo-text" cols="30" rows="10"  onkeyup="count();"></textarea>
+            </div>
+            <div class="word-count">
+                <p>Word Count: 0</p>
+            </div>
+            <div>
+                <button type="button" onclick="densityCheck(document.getElementById('seo-text').value);">Submit</button>
+                <button type="reset">Clear</button>
+            </div>
+            </form>
+    </div> 
+    
+     <!-- Own Javascript Function-->
+     <script src="javascriptfiles/densitychecker.js"></script>
+</body>
+</html>

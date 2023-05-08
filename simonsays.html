@@ -13,18 +13,23 @@
     <title>Simon Says Game</title>
 </head>
 <body>
+    <div class="container-fluid col-xs-12 col-md-8 text-center">
+        <h1>Simon Says</h1>
+        <p>To start a new game press the "Start Game" Button</p>
+    </div>
     <div class="container-fluid col-xs-12 col-md-8 text-center simoncanvas">
         <div>
-            <button class="btn btn-success" id="green_btn"></button>
-            <button class="btn btn-warning" id="yellow_btn"></button>
+            <button type="button" class="btn btn-success" id="green_btn"></button>
+            <button type="button" class="btn btn-warning" id="yellow_btn"></button>
     </div>
     <div>
-            <button class="btn btn-danger" id="red_btn"></button>
-            <button class="btn btn-primary" id="blue_btn"></button>
+            <button type="button" class="btn btn-danger" id="red_btn"></button>
+            <button type="button" class="btn btn-primary" id="blue_btn"></button>
     </div>
 </div>
 <div class="container-fluid col-xs-12 col-md-8 text-center">
     <button class="btn btn-info" onclick="play();">Start Game</button>
+    <button class="btn btn-danger" onclick="restartGame();">Restart Game</button>
 </div>
    
     <!-- Own Javascript Function-->
